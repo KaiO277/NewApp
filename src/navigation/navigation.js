@@ -8,6 +8,11 @@ import AdvancedSettingsScreen from '../screens/AdvancedSettings';
 import AddTagScreen from '../screens/AddTag';
 import { TouchableOpacity, Text, StyleSheet } from 'react-native';
 import EditPhotoScreen from '../screens/EditPhoto';
+import ChooseAlbumScreen from '../screens/ChooseAlbum';
+import SearchAlbumScreen from '../screens/SearchAlbum';
+import ImagePickerExampleScreen from '../screens/ImagePickerExample';
+import CreateTableScreen from '../screens/CreateTable';
+import AlbumScreen from '../screens/AlbumScreen';
 
 
 const Stack = createStackNavigator();
@@ -25,10 +30,57 @@ export default function Navigation() {
                     }} 
                 />
                 <Stack.Screen 
+                    name="ImagePickerExample" 
+                    component={ImagePickerExampleScreen} 
+                    options={{ 
+                        headerShown: false
+                        
+                    }} 
+                />
+                <Stack.Screen 
+                    name="SearchAlbum" 
+                    component={SearchAlbumScreen} 
+                    options={{ 
+                        headerShown: false
+                        
+                    }} 
+                />
+                <Stack.Screen 
+                    name="CreateTable" 
+                    component={CreateTableScreen} 
+                    options={{ 
+                        // headerShown: false
+                        headerTitle: 'Tạo ghim',
+                        headerTitleAlign: 'center',
+                        headerRight: () => (
+                            <TouchableOpacity style={styles.buttonSubmit} onPress={() => null}>
+                                <Text style={styles.buttonText}>Tạo</Text>
+                            </TouchableOpacity>
+                        ) 
+                    }} 
+                />
+                <Stack.Screen 
                     name="CreateMedia" 
                     component={CreateMediaScreen} 
                     options={{ 
                         headerTitle: 'Tạo ghim',
+                        headerTitleAlign: 'center' 
+                    }}
+                />
+                <Stack.Screen 
+                    name="AlbumScreen" 
+                    component={AlbumScreen} 
+                    options={{ 
+                        // headerTitle: 'Album',
+                        // headerTitleAlign: 'center' 
+                        headerShown: false
+                    }}
+                />
+                <Stack.Screen 
+                    name="ChooseAlbum" 
+                    component={ChooseAlbumScreen} 
+                    options={{ 
+                        headerTitle: 'Lưu vào',
                         headerTitleAlign: 'center' 
                     }}
                 />

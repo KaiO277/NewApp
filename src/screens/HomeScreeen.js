@@ -10,6 +10,18 @@ function HomeScreen({ navigation }) {
                 title='Create Media'
                 onPress={() => navigation.navigate('CreateMedia')}
             />
+            <Button 
+                title='Search Album'
+                onPress={() => navigation.navigate('ImagePickerExample')}
+            />
+            <Button 
+                title='Creata Table'
+                onPress={() => navigation.navigate('CreateTable')}
+            />
+            <Button 
+                title='Album'
+                onPress={() => navigation.navigate('AlbumScreen')}
+            />
         </View>
     );
 }
